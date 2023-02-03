@@ -4,7 +4,7 @@ import './style.scss';
 
 const LayoutFlex: React.FC<LayoutFlecProps> = (props) => {
   return (
-    <div className={`LayoutFlex LayoutFlex_${props.flex} ${props.class || ''}`}>
+    <div className={`${props.class || ''} LayoutFlex LayoutFlex_${props.flex}`}>
       {props.children}
     </div>
   );

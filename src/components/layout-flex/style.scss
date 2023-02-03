@@ -17,3 +17,11 @@
 .LayoutFlex_between {
   justify-content: space-between;
 }
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}

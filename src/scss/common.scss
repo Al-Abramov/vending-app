@@ -23,11 +23,19 @@
   src: url('../assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   background-color: $bg;
+}
+
+#root {
+  height: 100%;
 }
 
 h1,
@@ -41,12 +49,4 @@ ul {
 
 ul {
   list-style: none;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.align-center {
-  align-items: center;
 }
