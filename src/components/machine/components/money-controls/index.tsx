@@ -7,7 +7,7 @@ import Payment from './components/payment';
 const MoneyControls = () => {
   return (
     <LayoutFlex flex="start column" class="money-conrols">
-      <DisplayNum />
+      <DisplayNum addClass="money-conrols__display" num={75} />
       <Payment />
       <ReseptionChange />
     </LayoutFlex>

@@ -31,7 +31,11 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  background-color: $bg;
+  background-color: $main-bg;
+
+  @media (max-width: 730px) {
+    font-size: 12px;
+  }
 }
 
 #root {

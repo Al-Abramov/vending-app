@@ -1,5 +1,10 @@
+@import '../../scss/variables.scss';
+
 .slot {
   width: 80px;
-  height: 30px;
-  border: 2px solid black;
+  align-items: center;
+
+  @media (max-width: 730px) {
+    width: 60px;
+  }
 }

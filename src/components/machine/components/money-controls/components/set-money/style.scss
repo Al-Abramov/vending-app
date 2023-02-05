@@ -1,6 +1,25 @@
+@import '../../../../../../scss/variables.scss';
+
 .set-money {
+  position: relative;
   width: 55px;
   height: 55px;
   border-radius: 50%;
   border: 2px solid #000;
+
+  @media (max-width: 730px) {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.set-money::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid $black;
 }

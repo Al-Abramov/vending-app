@@ -1,8 +1,24 @@
 .money-conrols {
   width: 40%;
-  height: 34%;
   align-self: flex-end;
   align-items: flex-end;
   padding: 20px;
+  border-radius: 10px;
   box-shadow: 1px 4px 10px 2px rgb(0 0 0 / 8%);
+
+  @media (max-width: 730px) {
+    width: 45%;
+    padding: 10px;
+  }
+}
+
+.money-conrols__display {
+  width: 25%;
+  height: 40px;
+  font-size: 1.125em;
+
+  @media (max-width: 730px) {
+    width: 40%;
+    height: 30px;
+  }
 }

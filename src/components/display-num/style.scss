@@ -1,5 +1,11 @@
+@import '../../scss/variables.scss';
+
 .display-num {
-  width: 25%;
-  height: 25%;
-  border: 2px solid #000;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  color: $display-num;
+  border: 2px solid $black;
+  background-color: $display-bg;
+  box-shadow: inset 1px 1px 10px 2px rgb(0 0 0 / 75%);
 }
