@@ -1,12 +1,16 @@
 import React from 'react';
-import LayoutFlex from '../layout-flex';
+import { CoinProps } from './coin.interface';
 import './style.scss';
 
-const Coin = () => {
+const Coin: React.FC<CoinProps> = ({ value, clickCoin }) => {
+  const getValue = () => {
+    clickCoin(value);
+  };
+
   return (
-    <LayoutFlex flex="center" class="coin">
-      <span>1000</span>
-    </LayoutFlex>
+    <div className="coin center" onClick={getValue}>
+      <span>{value}</span>
+    </div>
   );
 };
 

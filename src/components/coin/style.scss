@@ -1,15 +1,21 @@
+@import '../../scss/variables.scss';
+
 .coin {
   width: 65px;
   height: 65px;
-  align-items: center;
   border-radius: 50%;
-  border: 4px solid #000;
+  border: 4px solid $black;
   font-size: 1.125em;
   font-weight: bold;
-  background-color: #e1bb8a;
+  background-color: $coin-gold;
+  cursor: pointer;
 
   @media (max-width: 730px) {
     width: 55px;
     height: 55px;
   }
+}
+
+.coin:hover {
+  transform: scale(1.03);
 }

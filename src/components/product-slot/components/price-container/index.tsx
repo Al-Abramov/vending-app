@@ -1,11 +1,11 @@
 import React from 'react';
+import { PriceContainerProps } from './price-container.iterface';
 import './style.scss';
 
-const PriceContainer = () => {
+const PriceContainer: React.FC<PriceContainerProps> = ({ count, price }) => {
   return (
-    <div className="slot__price-container">
-      <span className="slot__price">25</span>
-      <span className="slot__amount-goods">5</span>
+    <div className="slot__price-container center">
+      <span className="slot__price center">{price}</span>
     </div>
   );
 };
