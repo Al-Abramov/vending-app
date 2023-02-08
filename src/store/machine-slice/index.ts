@@ -24,14 +24,11 @@ const machineSlice = createSlice({
       state.userPayment += action.payload;
     },
     decreaseUserPayment(state, action: PayloadAction<number>) {
-      if (state.userPayment < action.payload) return;
       state.userPayment -= action.payload;
     },
     productCounter(state, action: PayloadAction<string>) {
       const currentProduct = state.products.find((product) => product.id === action.payload);
-      if (currentProduct && currentProduct.price <= state.userPayment) {
-        currentProduct.count--;
-      }
+      if (currentProduct) currentProduct.count--;
     },
   },
 });

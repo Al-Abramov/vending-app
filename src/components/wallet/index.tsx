@@ -4,8 +4,7 @@ import LayoutFlex from '../layout-flex';
 import Coins from './components/coins';
 import { useCallback } from 'react';
 import './style.scss';
-import { increaseUserPayment } from '../../store/machine-slice';
-import { decreaseUserMoney } from '../../store/user-slice';
+import { addMoneyAction } from '../../store/user-slice';
 import { getUserMoney } from '../../store/user-slice/selectors';
 
 const Wallet = () => {
@@ -14,11 +13,9 @@ const Wallet = () => {
 
   const clickCoin = useCallback(
     (coinValue: number) => {
-      if (userMoney < coinValue) return;
-      dispatch(increaseUserPayment(coinValue));
-      dispatch(decreaseUserMoney(coinValue));
+      dispatch(addMoneyAction(coinValue));
     },
-    [dispatch, userMoney]
+    [dispatch]
   );
 
   return (

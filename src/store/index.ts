@@ -1,6 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { Action, configureStore, ThunkDispatch } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 import machineReducer from './machine-slice';
+import { IState } from './state.iterface';
 import userReducer from './user-slice';
 
 const store = configureStore({
@@ -15,5 +16,7 @@ export default store;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+export const useAppDispatch = (): ThunkDispatch<IState, object, Action> =>
+  useDispatch<AppDispatch>();
