@@ -6,6 +6,6 @@ export interface machineSliceState {
   userPayment: number;
 }
 
-interface Change {
+export interface Change {
   [key: string]: number;
 }

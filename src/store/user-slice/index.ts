@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IProduct } from '../../constant/products/product.iterface';
-import { decreaseUserPayment, increaseUserPayment, productCounter } from '../machine-slice';
+import {
+  addCoin,
+  decreaseUserPayment,
+  increaseUserPayment,
+  productCounter,
+} from '../machine-slice';
 import { IState } from '../state.iterface';
 import { UserSliceState } from './user-slice.interface';
 
@@ -22,20 +27,26 @@ export const buyProductAction = createAsyncThunk<void, IProduct, { state: IState
   }
 );
 
-export const addMoneyAction = createAsyncThunk<void, number>(
+export const addMoneyAction = createAsyncThunk<void, number, { state: IState }>(
   'user/addMoney',
-  async (payload, { dispatch }) => {
-    if (initialState.userMoney < payload) return;
+  async (payload, { getState, dispatch }) => {
+    const state = getState();
+
+    if (state.user.userMoney < payload) return;
 
     dispatch(increaseUserPayment(payload));
     dispatch(decreaseUserMoney(payload));
+    dispatch(addCoin(payload));
   }
 );
 
 const userSlice = createSlice({
-  name: 'product',
+  name: 'user',
   initialState,
   reducers: {
+    increasetUserMoney(state, action: PayloadAction<number>) {
+      state.userMoney += action.payload;
+    },
     decreaseUserMoney(state, action: PayloadAction<number>) {
       if (state.userMoney < action.payload) return;
       state.userMoney -= action.payload;
@@ -50,6 +61,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { decreaseUserMoney, addProduct } = userSlice.actions;
+export const { increasetUserMoney, decreaseUserMoney, addProduct } = userSlice.actions;
 
 export default userSlice.reducer;

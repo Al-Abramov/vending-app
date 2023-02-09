@@ -6,9 +6,14 @@
   margin-top: 15px;
   background: center / contain url('../../../../../../assets/icon/handle.png') no-repeat;
   background-size: 70% 30%;
+  cursor: pointer;
 
   @media (max-width: 730px) {
     width: 40px;
     height: 40px;
   }
+}
+
+.get-change:hover {
+  transform: scale(1.02);
 }

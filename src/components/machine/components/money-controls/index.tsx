@@ -3,15 +3,23 @@ import DisplayNum from '../../../display-num';
 import './style.scss';
 import ReseptionChange from '../reseption-change';
 import Payment from './components/payment';
-import { useAppSelector } from '../../../../store';
+import { useAppDispatch, useAppSelector } from '../../../../store';
 import { getUserPayment } from '../../../../store/machine-slice/selectors';
+import { useCallback } from 'react';
+import { getChangeAction } from '../../../../store/machine-slice';
 
 const MoneyControls = () => {
+  const dispatch = useAppDispatch();
   const userPayment = useAppSelector(getUserPayment);
+
+  const getChange = useCallback(() => {
+    dispatch(getChangeAction());
+  }, [dispatch]);
+
   return (
     <LayoutFlex flex="start column" class="money-conrols">
       <DisplayNum addClass="money-conrols__display" num={userPayment} />
-      <Payment />
+      <Payment getChange={getChange} />
       <ReseptionChange />
     </LayoutFlex>
   );
