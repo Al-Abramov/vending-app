@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../store';
-import DisplayNum from '../display-num';
+import DisplayNum from '../display';
 import LayoutFlex from '../layout-flex';
 import Coins from './components/coins';
 import { useCallback } from 'react';
@@ -21,7 +21,7 @@ const Wallet = () => {
   return (
     <LayoutFlex flex="between align-center" class="wallet">
       <Coins clickCoin={clickCoin} />
-      <DisplayNum addClass="wallet__display" num={userMoney} />
+      <DisplayNum addClass="wallet__display" info={String(userMoney)} />
     </LayoutFlex>
   );
 };

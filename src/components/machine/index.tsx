@@ -1,5 +1,5 @@
 import LayoutFlex from '../layout-flex';
-import MoneyControls from './components/money-controls';
+import MachineControls from './components/machine-controls';
 import ReseptionProducts from './components/reseption-products';
 import Showcase from './components/showcase';
 import './style.scss';
@@ -8,7 +8,7 @@ const Machine = () => {
   return (
     <LayoutFlex flex="start column" class="machine">
       <Showcase />
-      <MoneyControls />
+      <MachineControls />
       <ReseptionProducts />
     </LayoutFlex>
   );

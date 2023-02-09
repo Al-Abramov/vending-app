@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { changeIsOverNotice } from '../../constant/info-texts';
 import { products } from '../../constant/products/products';
 import { changeCalculation } from '../../helpers/change-calculation';
 import { IState } from '../state.iterface';
@@ -17,6 +18,7 @@ export const initialState: machineSliceState = {
   },
   products,
   userPayment: 0,
+  notice: '',
 };
 
 export const getChangeAction = createAsyncThunk<void, undefined, { state: IState }>(
@@ -30,6 +32,11 @@ export const getChangeAction = createAsyncThunk<void, undefined, { state: IState
 
     dispatch(changeCalc({ sum, changeMoney }));
     dispatch(increasetUserMoney(change));
+    if (sum !== 0) {
+      dispatch(setNotice(changeIsOverNotice));
+    } else {
+      dispatch(setNotice(''));
+    }
   }
 );
 
@@ -54,10 +61,19 @@ const machineSlice = createSlice({
     addCoin(state, action: PayloadAction<number>) {
       state.initialMachineMoney[action.payload] += 1;
     },
+    setNotice(state, action: PayloadAction<string>) {
+      state.notice = action.payload;
+    },
   },
 });
 
-export const { increaseUserPayment, decreaseUserPayment, productCounter, changeCalc, addCoin } =
-  machineSlice.actions;
+export const {
+  increaseUserPayment,
+  decreaseUserPayment,
+  productCounter,
+  changeCalc,
+  addCoin,
+  setNotice,
+} = machineSlice.actions;
 
 export default machineSlice.reducer;

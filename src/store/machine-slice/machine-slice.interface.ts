@@ -4,6 +4,7 @@ export interface machineSliceState {
   initialMachineMoney: Change;
   products: IProduct[];
   userPayment: number;
+  notice: string;
 }
 
 export interface Change {

@@ -1,14 +1,14 @@
 import React from 'react';
 import LayoutFlex from '../layout-flex';
-import { DisplayNumProps } from './display-num.interace';
+import { DisplayProps } from './display.interace';
 import './style.scss';
 
-const DisplayNum: React.FC<DisplayNumProps> = ({ addClass, num }) => {
+const Display: React.FC<DisplayProps> = ({ addClass, info }) => {
   return (
     <LayoutFlex flex="center" class={`display-num ${addClass}`}>
-      <span>{num}</span>
+      <span>{info}</span>
     </LayoutFlex>
   );
 };
 
-export default React.memo(DisplayNum);
+export default React.memo(Display);
