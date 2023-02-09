@@ -12,7 +12,7 @@ const Product: React.FC<ProductProps> = ({ product, buyProduct }) => {
   return (
     <LayoutFlex flex="start column" class="product-wrapper center">
       <span className="product-count">{product.count}</span>
-      <Tippy content={<span className="product-tooltip">{product.name}</span>}>
+      <Tippy content={product.name} className="product-tooltip">
         <div className={`product ${product.type} center`} onClick={buy}></div>
       </Tippy>
     </LayoutFlex>
