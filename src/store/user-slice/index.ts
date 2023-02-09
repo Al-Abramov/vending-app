@@ -5,6 +5,7 @@ import {
   decreaseUserPayment,
   increaseUserPayment,
   productCounter,
+  setNotice,
 } from '../machine-slice';
 import { IState } from '../state.iterface';
 import { UserSliceState } from './user-slice.interface';
@@ -24,6 +25,7 @@ export const buyProductAction = createAsyncThunk<void, IProduct, { state: IState
     dispatch(productCounter(payload.id));
     dispatch(decreaseUserPayment(payload.price));
     dispatch(addProduct(payload));
+    dispatch(setNotice(''));
   }
 );
 

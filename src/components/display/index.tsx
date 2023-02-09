@@ -5,7 +5,7 @@ import './style.scss';
 
 const Display: React.FC<DisplayProps> = ({ addClass, info }) => {
   return (
-    <LayoutFlex flex="center" class={`display-num ${addClass}`}>
+    <LayoutFlex flex="center" class={`display ${addClass}`}>
       <span>{info}</span>
     </LayoutFlex>
   );

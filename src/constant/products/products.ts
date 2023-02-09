@@ -45,7 +45,7 @@ export const products: IProduct[] = [
   },
   {
     id: '116',
-    name: 'Тень льва',
+    name: 'Флюорография гуся',
     price: 69,
     count: 8,
     type: 'circle-blk',
