@@ -2,9 +2,9 @@ import { useAppDispatch, useAppSelector } from '../../store';
 import DisplayNum from '../display';
 import LayoutFlex from '../layout-flex';
 import Coins from './components/coins';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import './style.scss';
-import { addMoneyAction } from '../../store/user-slice';
+import { addMoneyAction, setUserMoney } from '../../store/user-slice';
 import { getUserMoney } from '../../store/user-slice/selectors';
 
 const Wallet = () => {
@@ -17,6 +17,10 @@ const Wallet = () => {
     },
     [dispatch]
   );
+
+  useEffect(() => {
+    dispatch(setUserMoney());
+  }, []);
 
   return (
     <LayoutFlex flex="between align-center" class="wallet">

@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IProduct } from '../../constant/products/product.iterface';
+import { walletDisplay } from '../../constant/wallet-constants';
+import { getRandomInt } from '../../helpers/get-random';
 import {
   addCoin,
   decreaseUserPayment,
@@ -46,6 +48,9 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    setUserMoney(state) {
+      state.userMoney = getRandomInt(walletDisplay.min, walletDisplay.max) * 100;
+    },
     increasetUserMoney(state, action: PayloadAction<number>) {
       state.userMoney += action.payload;
     },
@@ -63,6 +68,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { increasetUserMoney, decreaseUserMoney, addProduct } = userSlice.actions;
+export const { increasetUserMoney, decreaseUserMoney, addProduct, setUserMoney } =
+  userSlice.actions;
 
 export default userSlice.reducer;
