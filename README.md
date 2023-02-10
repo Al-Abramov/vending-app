@@ -1,5 +1,13 @@
 # Deploy: https://vending-app-chi.vercel.app/
 
+## В процессе разработки испольовались:
+* __React__ - основной фрймворк
+* __TypeScript__ - типизация
+* __Redux toolkit__ - хранение состояния приложения
+* __Sass__ - написание стилей и спользование модулей
+* __tippyjs__ - библиотека тултипов
+* __eslint__, __prettier__ - форматирование и стиль кода
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
