@@ -41,6 +41,7 @@ export const addMoneyAction = createAsyncThunk<void, number, { state: IState }>(
     dispatch(increaseUserPayment(payload));
     dispatch(decreaseUserMoney(payload));
     dispatch(addCoin(payload));
+    dispatch(setNotice(''));
   }
 );
 
