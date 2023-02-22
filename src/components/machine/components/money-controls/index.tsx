@@ -1,16 +1,14 @@
 import LayoutFlex from '../../../layout-flex';
-import DisplayNum from '../../../display';
 import './style.scss';
 import ReseptionChange from '../reseption-change';
 import Payment from './components/payment';
-import { useAppDispatch, useAppSelector } from '../../../../store';
-import { getUserPayment } from '../../../../store/machine-slice/selectors';
+import { useAppDispatch } from '../../../../store';
 import { useCallback } from 'react';
 import { getChangeAction } from '../../../../store/machine-slice';
+import MoneyDisplay from './components/display';
 
 const MoneyControls = () => {
   const dispatch = useAppDispatch();
-  const userPayment = useAppSelector(getUserPayment);
 
   const getChange = useCallback(() => {
     dispatch(getChangeAction());
@@ -18,7 +16,7 @@ const MoneyControls = () => {
 
   return (
     <LayoutFlex flex="start column" class="money-conrols">
-      <DisplayNum addClass="money-conrols__display" info={String(userPayment)} />
+      <MoneyDisplay />
       <Payment getChange={getChange} />
       <ReseptionChange />
     </LayoutFlex>

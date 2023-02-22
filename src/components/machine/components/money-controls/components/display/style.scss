@@ -1,0 +1,10 @@
+.money-conrols__display {
+  width: 25%;
+  height: 40px;
+  font-size: 1.125em;
+
+  @media (max-width: 730px) {
+    width: 50%;
+    height: 30px;
+  }
+}

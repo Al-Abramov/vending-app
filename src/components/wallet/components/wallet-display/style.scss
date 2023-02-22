@@ -1,0 +1,14 @@
+.wallet__display {
+  width: 10%;
+  height: 100px;
+  font-size: 1.125em;
+
+  @media (max-width: 730px) {
+    width: 15%;
+    height: 65px;
+  }
+}
+
+.wallet__display_width {
+  width: 100%;
+}

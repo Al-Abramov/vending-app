@@ -1,4 +1,4 @@
 export interface DisplayProps {
-  addClass: string;
+  addClass?: string;
   info: string;
 }

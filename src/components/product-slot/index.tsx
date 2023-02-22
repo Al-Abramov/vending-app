@@ -9,7 +9,7 @@ const ProductSlot: React.FC<ProductSlotProps> = ({ product, buyProduct }) => {
   return (
     <LayoutFlex flex="center column" class="slot">
       {product.count ? <Product product={product} buyProduct={buyProduct} /> : ''}
-      <PriceContainer count={product.count} price={product.price} />
+      <PriceContainer price={product.price} />
     </LayoutFlex>
   );
 };
